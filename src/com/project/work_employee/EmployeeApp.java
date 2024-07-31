@@ -8,7 +8,10 @@ public class EmployeeApp {
 
 	public static void main(String[] args) throws SQLException {
 
+		//DAO 생성자
 		EmployeeDao employeedao = new EmployeeDao();
+		
+		//스캐너 오픈
 		Scanner sc = new Scanner(System.in);
 
 		String login_id;
@@ -66,6 +69,7 @@ public class EmployeeApp {
 						System.out.println("수정하고 싶은 번호를 입력해주세요. ");
 						System.out.println("#으로 표시된 곳은 변경 불가능합니다. ");
 						System.out.println("변경 종료는 0번");
+						System.out.println(">> ");
 						int changeNum = sc.nextInt();
 						sc.nextLine(); 
 		                
@@ -85,6 +89,7 @@ public class EmployeeApp {
 		                    System.out.println("수정하고 싶은 번호를 입력해주세요.");
 		                    System.out.println("#으로 표시된 곳은 변경 불가능합니다.");
 		                    System.out.println("변경 종료는 0번");
+		                    System.out.println(">> ");
 		                    changeNum = sc.nextInt();
 		                    sc.nextLine(); // Consume newline left-over
 		                }
@@ -123,6 +128,7 @@ public class EmployeeApp {
 				System.out.print("부서 이름(1.HR 2.Operations 3.Marketing): ");
 				String departmentName = sc.nextLine().trim();
 
+				//아이디 중복확인
 				String loginID;
                 do {
                     System.out.print("로그인 ID: ");
