@@ -60,12 +60,12 @@ public class WorkVO {
 
 	
 	public void showMyHistory() {
-		System.out.println("┌--------------- [ 근무일지 ] ---------------");
-		System.out.println("직원번호: " + employeeID);
-		System.out.println("출근시간: " + start_AndTime);
-		System.out.println("상태: " + workStartStatus);
-		System.out.println("퇴근시간: " + end_AndTime);
-		System.out.println("상태: " + workEndStatus);
+		System.out.println("───────────────────── [ 근무일지 ] ────────────────────");
+		System.out.println("  📇 직원번호: " + employeeID);
+		System.out.println("  ⏰ 출근시간: " + start_AndTime);
+		System.out.println("  ✅ 상태: " + workStartStatus);
+		System.out.println("  ⏰ 퇴근시간: " + end_AndTime);
+		System.out.println("  ✅ 상태: " + workEndStatus);
 		
 	}
 	
