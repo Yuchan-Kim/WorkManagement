@@ -131,16 +131,20 @@ public class UserVo {
 
 
 	public void showInfo() {
-		System.out.println("**********[ 내 정보 ]**********");
-		System.out.println("#직원 아이디: " + "empID");
-		System.out.println("1.이름: " + name);
-		System.out.println("#부서 아이디: " + department_id);
-		System.out.println("2.로그인 아이디: " + id);
-		System.out.println("3.로그인 비밀번호: " + pw);
-		System.out.println("4.이메일: " + email);
-		System.out.println("5.주소: " + address);
-		System.out.println("6.전화번호: " + phonenumber);
-		System.out.println("#입사일: " + hire_date);
+		System.out.println("┌------------ [ 내 정보 ] -------------");
+		System.out.println("| 직원 아이디: " + "empID");
+		System.out.println("| 부서 아이디: " + department_id);
+		System.out.println("| 입사일: " + hire_date);
+		System.out.println("|");
+		System.out.println("| 1.이름: " + name);
+		System.out.println("| 2.로그인 아이디: " + id);
+		System.out.println("| 3.로그인 비밀번호: " + pw);
+		System.out.println("| 4.이메일: " + email);
+		System.out.println("| 5.주소: " + address);
+		System.out.println("| 6.전화번호: " + phonenumber);
+		
+		System.out.println();
+		
 	}
 
 	

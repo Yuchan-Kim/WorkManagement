@@ -103,9 +103,20 @@ public class EmployeeDao {
 				pstmt.setString(3, workStatus);
 
 				pstmt.executeUpdate();
-				System.out.println("출근 기록이 성공적으로 추가되었습니다.");
+				System.out.println();
+				System.out.println("┌---------------Success!----------------");
+				System.out.println("|**** 출근 기록이 성공적으로 추가되었습니다 ******");
+				System.out.println("----------------------------------------");
+				System.out.println();
+				System.out.println();
+				
+
 			} else {
-				System.out.println("로그인 ID와 PW가 일치하는 사용자를 찾을 수 없습니다.");
+				System.out.println();
+				System.out.println("┌------------------Warning-----------------");
+				System.out.println("| 로그인 ID와 PW가 일치하는 사용자를 찾을 수 없습니다 |");
+				System.out.println("----------------------------------------");
+				System.out.println();
 			}
 		} catch (SQLException e) {
 			System.out.println("error:" + e);
@@ -158,12 +169,28 @@ public class EmployeeDao {
 
 				int rowsUpdated = pstmt.executeUpdate();
 				if (rowsUpdated > 0) {
-					System.out.println("퇴근 기록이 성공적으로 업데이트되었습니다.");
+					System.out.println();
+					System.out.println("┌----------------Warning----------------");
+					System.out.println("|    퇴근 기록이 성공적으로 업데이트되었습니다     ");
+					System.out.println("----------------------------------------");
+					System.out.println();
+
 				} else {
-					System.out.println("퇴근 기록 업데이트에 실패했습니다.");
+					System.out.println();
+					System.out.println("┌----------------Warning----------------");
+					System.out.println("|      퇴근 기록 업데이트에 실패했습니다         ");
+					System.out.println("----------------------------------------");
+					System.out.println();
+
 				}
 			} else {
-				System.out.println("로그인 ID와 PW가 일치하는 사용자를 찾을 수 없습니다.");
+				System.out.println();
+				System.out.println("┌-----------------Warning------------------");
+				System.out.println("| 로그인 ID와 PW가 일치하는 사용자를 찾을 수 없습니다 |");
+				System.out.println("-----------------------------------------");
+
+				System.out.println();
+
 			}
 		} catch (SQLException e) {
 			System.out.println("error:" + e);
@@ -247,7 +274,11 @@ public class EmployeeDao {
 			if (rs.next()) {
 				departmentID = rs.getInt("department_id");
 			} else {
-				System.out.println("해당 부서를 찾을 수 없습니다.");
+				System.out.println();
+				System.out.println("┌----------------Warning----------------");
+				System.out.println("|         해당 부서를 찾을 수 없습니다.        ");
+				System.out.println("----------------------------------------");
+				System.out.println();
 				return;
 			}
 
@@ -267,7 +298,12 @@ public class EmployeeDao {
 			if (rowsInserted > 0) {
 				System.out.println("회원 가입이 성공적으로 완료되었습니다.");
 			} else {
-				System.out.println("회원 가입에 실패했습니다.");
+				System.out.println();
+				System.out.println("┌----------------Warning----------------");
+				System.out.println("|           회원 가입에 실패했습니다.         ");
+				System.out.println("----------------------------------------");
+				System.out.println();
+
 			}
 		} catch (SQLException e) {
 			System.out.println("error:" + e);
@@ -338,21 +374,33 @@ public class EmployeeDao {
 		case 2:
 			column = "login_ID";
 			if (isIdDuplicate(newValue)) {
-				System.out.println("이미 사용 중인 ID입니다.");
+				System.out.println();
+				System.out.println("┌----------------Warning----------------");
+				System.out.println("|          이미 사용 중인 ID입니다.");
+				System.out.println("----------------------------------------");
+				System.out.println();
 				return updateSuccessful;
 			}
 			break;
 		case 3:
 			column = "login_PW";
 			if (isPwDuplicate(newValue)) {
-				System.out.println("이미 사용 중인 비밀번호입니다.");
+				System.out.println();
+				System.out.println("┌----------------Warning----------------");
+				System.out.println("|        이미 사용 중인 비밀번호입니다.         ");
+				System.out.println("----------------------------------------");
+				System.out.println();
 				return updateSuccessful;
 			}
 			break;
 		case 4:
 			column = "email";
 			if (isEmailDuplicate(newValue)) {
-				System.out.println("이미 사용 중인 이메일입니다.");
+				System.out.println();
+				System.out.println("┌----------------Warning----------------");
+				System.out.println("|         이미 사용 중인 이메일입니다.         ");
+				System.out.println("----------------------------------------");
+				System.out.println();
 				return updateSuccessful;
 			}
 			break;
@@ -363,7 +411,11 @@ public class EmployeeDao {
 			column = "phone_number";
 			break;
 		default:
-			System.out.println("잘못된 번호입니다.");
+			System.out.println();
+			System.out.println("┌----------------Warning----------------");
+			System.out.println("|             잘못된 번호입니다.            |");
+			System.out.println("----------------------------------------");
+			System.out.println();
 			return updateSuccessful;
 		}
 
@@ -380,7 +432,11 @@ public class EmployeeDao {
 			if (rowsAffected > 0) {
 				updateSuccessful = true;
 			} else {
-				System.out.println("정보 업데이트에 실패했습니다.");
+				System.out.println();
+				System.out.println("┌----------------Warning----------------");
+				System.out.println("|         정보 업데이트에 실패했습니다.        ");
+				System.out.println("----------------------------------------");
+				System.out.println();
 			}
 		} catch (SQLException e) {
 			System.out.println("error:" + e);
